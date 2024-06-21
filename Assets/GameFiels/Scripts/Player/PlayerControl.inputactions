@@ -16,26 +16,15 @@
                 },
                 {
                     "name": "Jump",
-                    "type": "Button",
+                    "type": "PassThrough",
                     "id": "34fca573-0a85-4061-aa4e-b50f413dfbc8",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "Press",
                     "initialStateCheck": false
                 }
             ],
             "bindings": [
-                {
-                    "name": "",
-                    "id": "074374d1-7ccb-4428-a25b-dfa4f90092f9",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
                 {
                     "name": "1D Axis",
                     "id": "8958c292-0d00-4463-aa25-26216eff5858",

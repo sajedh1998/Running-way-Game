@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Strewbarry
   - Trap
+  - FillDown
   layers:
   - Default
   - TransparentFX
@@ -48,4 +49,7 @@ TagManager:
     locked: 0
   - name: Terrain
     uniqueID: 3974655577
+    locked: 0
+  - name: Char
+    uniqueID: 1143930767
     locked: 0

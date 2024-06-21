@@ -1,19 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Player
 {
     public class RotateTrap : MonoBehaviour
     {
+        // Variables
         [SerializeField] private float speed = 2f;
-        float timer = 0;
+        private float timer = 0f;
 
+        // Update is called once per frame
         private void Update()
         {
-            float angle = Mathf.Sin(timer) * 45;
+            Rotate();
+        }
+
+        // Rotate the trap based on the sine of the timer
+        private void Rotate()
+        {
+            float angle = Mathf.Sin(timer) * 45f;
             transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-            timer += (speed * Time.deltaTime);
+            timer += speed * Time.deltaTime;
         }
     }
 }

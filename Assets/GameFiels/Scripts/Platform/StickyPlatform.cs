@@ -4,20 +4,21 @@ namespace Platform
 {
     public class StickyPlatform : MonoBehaviour
     {
-        private void OnTriggerEnter2D(Collider2D collision)
+        public string tagName = "Player";
+
+        private void OnCollisionEnter2D(Collision2D collision)
         {
-            if (collision.gameObject.name == "Player")
-            {
-                collision.gameObject.transform.SetParent(transform);
-            }
+            if (collision.gameObject.CompareTag(tagName))
+                collision.transform.SetParent(transform);
         }
 
-        private void OnTriggerExit2D(Collider2D collision)
+
+        private void OnCollisionExit2D(Collision2D collision)
         {
-            if (collision.gameObject.name == "Player")
-            {
-                collision.gameObject.transform.SetParent(null);
-            }
+            if (collision.gameObject.CompareTag(tagName))
+                if (collision.transform.parent == transform)
+                    collision.transform.SetParent(null);
         }
     }
 }
+

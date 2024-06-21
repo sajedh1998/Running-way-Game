@@ -7,21 +7,29 @@ namespace Player
     public class FinishLevel : MonoBehaviour
     {
         public bool levelCompleted;
+        public string playerName = "Player";
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if(collision.gameObject.name == "Player" && !levelCompleted)
+            if (collision.gameObject != null)
             {
-                SoundManager.instance.PlaySound(3);
-                levelCompleted = true;
-
-                Invoke("CompleteLevel", 2f);
+                if (collision.gameObject.CompareTag(playerName) && !levelCompleted)
+                {
+                    SoundManager.Instance.PlaySound(3);
+                    levelCompleted = true;
+                    Invoke(nameof(CompleteLevel), 2f);
+                }
             }
         }
 
         private void CompleteLevel()
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+
+            if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
+                SceneManager.LoadScene(nextSceneIndex);
+            else
+                Debug.LogWarning("No next scene available.");
         }
     }
 }

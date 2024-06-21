@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Platform
@@ -21,9 +19,7 @@ namespace Platform
             {
                 currentIndex++;
                 if (currentIndex >= wayPoints.Length)
-                {
-                    currentIndex = 0;
-                }
+                    currentIndex = 0;               
             }
             transform.position = Vector2.MoveTowards(transform.position, wayPoints[currentIndex].transform.position, Time.deltaTime * speed);
         }
