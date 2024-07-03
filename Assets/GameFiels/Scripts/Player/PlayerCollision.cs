@@ -35,7 +35,7 @@ namespace Player
                 rb.bodyType = RigidbodyType2D.Static;
                 SoundManager.Instance.PlaySound(2);
                 anim.SetTrigger("Death");
-                Invoke(nameof(EnableReplay), 0.5f);
+                Invoke(nameof(EnableReplay), 1.5f);
             }
             else
                 StartCoroutine(RePlay());

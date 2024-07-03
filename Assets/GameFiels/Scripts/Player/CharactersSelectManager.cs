@@ -107,15 +107,18 @@ public class CharactersSelectManager : MonoBehaviour
         int resetIndex = 1;
         if (resetIndex >= 0 && resetIndex < characters.Length)
         {
-            characters[resetIndex].isUnlocked = false;
-            PlayerPrefs.SetInt(characters[resetIndex].name, 0);
-
-            if (selectedCharacter == resetIndex)
+            for (int i = resetIndex; i < characters.Length; i++)
             {
-                selectedCharacter = 0;
-                PlayerPrefs.SetInt("SelectedCharacter", selectedCharacter);
-            }
+                characters[i].isUnlocked = false;
+                PlayerPrefs.SetInt(characters[i].name, 0);
 
+                if (selectedCharacter == i)
+                {
+                    selectedCharacter = 0;
+                    PlayerPrefs.SetInt("SelectedCharacter", selectedCharacter);
+                }
+            }
+            PlayerPrefs.SetInt("NumberOfCoins", 0);
             UpdateUI();
         }
     }
