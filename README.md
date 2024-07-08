@@ -22,5 +22,3 @@ Prepare to immerse yourself in a world of adventure, challenge, and fun. Can you
 
 APK file link:
 https://drive.google.com/drive/folders/1djE8DzyRP4c2WMHVPBYcV5Hn04MFviFK?usp=share_link
-On itch.io:
-https://gamespublish.itch.io/runningway
