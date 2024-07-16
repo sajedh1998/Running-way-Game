@@ -10,7 +10,7 @@ namespace UI
 
         void Start()
         {
-            int unlockedLevels = PlayerPrefs.GetInt("UnlockedLevel", 1);
+            int unlockedLevels = PlayerPrefs.GetInt("ReachedIndex", 1);
 
             for (int i = 0; i < levelButtons.Length; i++)
             {
@@ -25,6 +25,13 @@ namespace UI
         {
             print(levelIndex);
             SceneManager.LoadScene(levelIndex);
+        }
+
+        public void ResetLevels()
+        {
+            PlayerPrefs.SetInt("ReachedIndex", 1);
+            PlayerPrefs.Save();
+            Debug.Log("Levels Reset");
         }
     }
 }
